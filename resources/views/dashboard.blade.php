@@ -179,8 +179,8 @@
     <div class="col-lg-4 col-6">
         <div class="small-box bg-info">
             <div class="inner">
-                <h3>0</h3>
-                <p>Jadwal</p>
+                <h2>Jadwal</h2>
+                <p></p>
             </div>
             <div class="icon">
                 <i class="fas fa-calendar-alt nav-icon"></i>
@@ -191,13 +191,13 @@
     <div class="col-lg-4 col-6">
         <div class="small-box bg-success">
             <div class="inner">
-                <h3>0</h3>
-                <p>Absensi</p>
+                <h2>Absensi</h2>
+                <p></p>
             </div>
             <div class="icon">
                 <i class="fas fa-calendar-check nav-icon"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{ url('/presensi-mhs') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
     @endif

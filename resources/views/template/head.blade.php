@@ -30,8 +30,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/fullcalendar-daygrid/main.min.css') }}">
   <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/fullcalendar-timegrid/main.min.css') }}">
   <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/fullcalendar-bootstrap/main.min.css') }}">
+  @stack('link')
 </head>
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini" onload="realtimeClock()">
 <div class="wrapper">
 
   <!-- Navbar -->

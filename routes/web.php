@@ -9,6 +9,7 @@ use App\Http\Controllers\MataKuliahController;
 use App\Http\Controllers\RuangController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KelasController;
+use App\Http\Controllers\PresensiMhsController;
 use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
@@ -78,6 +79,15 @@ Route::group(['middleware' => ['auth','cekLevel:admin']], function () {
     // Users
     Route::get('/users', [UserController::class, 'index']);
 
+});
 
+
+// Mahasiswa
+Route::group(['middleware' => ['auth','cekLevel:mahasiswa']], function () {
+    // Presensi
+    Route::get('/presensi-mhs', [PresensiMhsController::class, 'index']);
+    Route::post('/presensi-mhs', [PresensiMhsController::class, 'store']);
+    Route::get('filter-data', [PresensiMhsController::class, 'halamanrekap'])->name('filter-data');
+    Route::get('filter-data/{tglawal}/{tglakhir}', [PresensiMhsController::class, 'tampildatakeseluruhan'])->name('filter-data-keseluruhan');
 
 });

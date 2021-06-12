@@ -146,7 +146,7 @@
             <a href="#" class="nav-link">
             <i class="nav-icon fas fa-calendar-check"></i>
               <p>
-                  Absensi
+                  Presensi
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -176,8 +176,14 @@
               @if (auth()->user()->level=="mahasiswa")
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="fas fa-users nav-icon"></i>
-                    <p>Per Mahasiswa</p>
+                  <i class="fas fa-user nav-icon"></i>
+                    <p>Presensi Mahasiswa</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('filter-data') }}" class="nav-link">
+                  <i class="fas fa-user nav-icon"></i>
+                    <p>Rekap Presensi Mahasiswa</p>
                 </a>
               </li>
               @endif
