@@ -1,7 +1,7 @@
 @extends('template.head')
-@section('title', 'SIAKAD - Data Jadwal Kuliah')
-@section('heading', 'Data Jadwal Kuliah')
-@section('page', 'Data Jadwal Kuliah')
+@section('title', 'SIAKAD - Data Kelas')
+@section('heading', 'Data Kelas')
+@section('page', 'Data Kelas')
 @section('content')
 
 <div class="col-md-12">
@@ -19,11 +19,10 @@
           <table id="jadwal" class="table table-bordered table-striped table-hover">
             <thead>
                 <tr>
-                    <th>No.</th>
-                    <th>Nama Mata Kuliah</th>
+                    <th>No. </th>
+                    <th>Mata Kuliah</th>
                     <th>Nama Kelas</th>
-                    <th>Jam Mulai</th>
-                    <th>Jam Selesai</th>
+                    <th>Dosen</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -33,10 +32,9 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $data->matkul_id }}</td>
                     <td>{{ $data->nama_kelas }}</td>
-                    <td>{{ $data->jam_mulai }}</td>
-                    <td>{{ $data->jam_selesai }}</td>
+                    <td>{{ $data->dosen_id }}  </td>
                     <td>
-                      <a href="#" class="btn btn-info btn-sm"><i class="nav-icon fas fa-search-plus"></i> &nbsp; Ditails</a>
+                      <a href="#" class="btn btn-info btn-sm"><i class="nav-icon fas fa-search-plus"></i> &nbsp; Details</a>
                     </td>
                   </tr>
                 @endforeach
@@ -59,53 +57,29 @@
           </button>
       </div>
       <div class="modal-body">
-          <form action="#" method="post"> 
+          <form action="{{ url('/kelas') }}" method="post"> 
             @csrf
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="hari_id">Hari</label>
-                  <select id="hari_id" name="hari_id" class="form-control @error('hari_id') is-invalid @enderror select2bs4">
-                      <option value="">-- Pilih Hari --</option>
-                      @foreach ($hari as $data)
-                          <option value="{{ $data->id }}">{{ $data->nama_hari }}</option>
-                      @endforeach
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="kelas_id">Kelas</label>
-                  <select id="kelas_id" name="kelas_id" class="form-control @error('kelas_id') is-invalid @enderror select2bs4">
-                      <option value="">-- Pilih Kelas --</option>
-                      @foreach ($kelas as $data)
-                          <option value="{{ $data->id }}">{{ $data->nama_kelas }}</option>
-                      @endforeach
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="matkul_id">Kode Mapel</label>
+                  <label for="matkul_id">Mata Kuliah</label>
                   <select id="matkul_id" name="matkul_id" class="form-control @error('matkul_id') is-invalid @enderror select2bs4">
-                      <option value="">-- Pilih Kode Mapel --</option>
+                      <option value="">-- Pilih Mata Kuliah --</option>
                       @foreach ($matkul as $data)
                           <option value="{{ $data->id }}">{{ $data->nama_matkul }}</option>
                       @endforeach
                   </select>
                 </div>
-              </div>
-              <div class="col-md-6">
                 <div class="form-group">
-                  <label for="jam_mulai">Jam Mulai</label>
-                  <input type='text' id="jam_mulai" name='jam_mulai' class="form-control @error('jam_mulai') is-invalid @enderror jam_mulai" placeholder="{{ Date('H:i') }}">
+                  <label for="nama_kelas">Nama Kelas</label>
+                  <input type='text' id="nama_kelas" name='nama_kelas' class="form-control @error('nama_kelas') is-invalid @enderror nama_kelas" placeholder="Nama Kelas">
                 </div>
                 <div class="form-group">
-                  <label for="jam_selesai">Jam Selesai</label>
-                  <input type='text' id="jam_selesai" name='jam_selesai' class="form-control @error('jam_selesai') is-invalid @enderror" placeholder="{{ Date('H:i') }}">
-                </div>
-                <div class="form-group">
-                  <label for="ruang_id">Ruang Kelas</label>
-                  <select id="ruang_id" name="ruang_id" class="form-control @error('ruang_id') is-invalid @enderror select2bs4">
-                      <option value="">-- Pilih Ruang Kelas --</option>
-                      @foreach ($ruang as $data)
-                          <option value="{{ $data->id }}">{{ $data->nama_ruang }}</option>
+                  <label for="dosen_id">Dosen</label>
+                  <select id="dosen_id" name="dosen_id" class="form-control @error('dosen_id') is-invalid @enderror select2bs4">
+                      <option value="">-- Pilih Dosen --</option>
+                      @foreach ($dosen as $data)
+                          <option value="{{ $data->id }}">{{ $data->nama }}</option>
                       @endforeach
                   </select>
                 </div>

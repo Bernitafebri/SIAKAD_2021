@@ -15,11 +15,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{asset('AdminLTE/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('AdminLTE/dist/css/adminlte.min.css')}}">
-
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/daterangepicker/daterangepicker.css') }}">
   <!-- DataTables -->
   <link rel="stylesheet" href="{{asset('AdminLTE/plugins/datatables-bs4/css/dataTables.bootstrap4.min.')}}">
   <link rel="stylesheet" href="{{asset('AdminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
   <link rel="stylesheet" href="{{asset('AdminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
+
+  <!-- TimePicker -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+
+  <!-- fullCalendar -->
+  <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/fullcalendar/main.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/fullcalendar-daygrid/main.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/fullcalendar-timegrid/main.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/fullcalendar-bootstrap/main.min.css') }}">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">

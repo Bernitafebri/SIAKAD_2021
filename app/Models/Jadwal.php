@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Jadwal extends Model
 {
     use HasFactory;
-    protected $fillable = ['hari_id',  'matkul_id', 'dosen_id', 'jam_mulai', 'jam_selesai', 'ruang_id'];
+    protected $fillable = ['hari_id',  'matkul_id', 'kelas_id', 'dosen_id', 'jam_mulai', 'jam_selesai', 'ruang_id'];
 
     public function Hari()
     {
@@ -18,6 +18,10 @@ class Jadwal extends Model
     public function MataKuliah()
     {
         return $this->belongsTo('App\Models\MataKuliah')->withDefault();
+    }
+    public function Kelas()
+    {
+        return $this->belongsTo('App\Models\Kelas')->withDefault();
     }
 
     public function Dosen()

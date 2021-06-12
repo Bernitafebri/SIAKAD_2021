@@ -7,6 +7,8 @@ use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MataKuliahController;
 use App\Http\Controllers\RuangController;
+use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\KelasController;
 use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
@@ -64,8 +66,18 @@ Route::group(['middleware' => ['auth','cekLevel:admin']], function () {
     // Ruang
     Route::get('/ruangs', [RuangController::class, 'index']);
 
+    // Jadwal
+    Route::get('/jadwals', [JadwalController::class, 'index']);
+    Route::post('/jadwals', [JadwalController::class, 'store']);
+
+    // Kelas
+    Route::get('/kelas', [KelasController::class, 'index']);
+    Route::post('/kelas', [KelasController::class, 'store']);
+
 
     // Users
     Route::get('/users', [UserController::class, 'index']);
+
+
 
 });

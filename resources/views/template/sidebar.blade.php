@@ -25,7 +25,7 @@
             </a>
             <ul class="nav nav-treeview ml-4">
               <li class="nav-item">
-                <a href="#" class="nav-link ">
+                <a href="{{ url('/jadwals') }}" class="nav-link ">
                   <i class="fas fa-calendar-alt nav-icon"></i>
                   <p>Data Jadwal</p>
                 </a>
@@ -49,14 +49,14 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ url('/kelas') }}" class="nav-link">
                   <i class="fas fa-file-signature nav-icon"></i>
-                    <p>Data Nilai</p>
+                    <p>Data Kelas</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ url('/ruangs') }}" class="nav-link">
-                  <i class="fas fa-user nav-icon"></i>
+                  <i class="fab fa-buromobelexperte nav-icon"></i>
                     <p>Data Ruang</p>
                 </a>
               </li>
@@ -64,6 +64,36 @@
                 <a href="{{ url('/users') }}" class="nav-link">
                   <i class="fas fa-user nav-icon"></i>
                     <p>Data User</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-file-signature"></i>
+              <p>
+                  Nilai
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview ml-4">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fas fa-file-alt nav-icon"></i>
+                    <p>Nilai Harian</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fas fa-file-alt nav-icon"></i>
+                    <p>Nilai UTS</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fas fa-file-alt nav-icon"></i>
+                    <p>Nilai UAS</p>
                 </a>
               </li>
             </ul>
