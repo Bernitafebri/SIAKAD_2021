@@ -50,7 +50,7 @@ class MahasiswaController extends Controller
             'prodi' => $request->prodi, 
         ]);
 
-        return redirect('/data-mhs')->with('toast_success', 'Data berhasil ditambahkan!');
+        return redirect('/data-mhs')->with('success', 'Data berhasil ditambahkan!');
     }
 
     

@@ -14,7 +14,7 @@
             </h3>
         </div>
             <!-- /.card-header -->
-        <div class="card-body">
+        <div class="card-body"> 
             <div class="form-group">
                 <label for="label">Tanggal Awal</label>
                 <input type="date" id="tglawal" name="tglawal" class="form-control">
@@ -24,7 +24,7 @@
                 <input type="date" id="tglakhir" name="tglakhir" class="form-control">
             </div>
             <div class="form-group">
-               <a href="" onclick="this.href='/filter-data/'+document.getElementById('tglawal').value +
+               <a href="" onclick="this.href='/filter-data-dosen/'+document.getElementById('tglawal').value +
                '/' + document.getElementById('tglakhir').value " class="btn btn-primary col-md-12">
                Lihat <i class="fas fa-print"></i>
                </a>
@@ -40,9 +40,4 @@
  
 @endsection
 
-@push('scripts')
-
-
-
-@endpush
 

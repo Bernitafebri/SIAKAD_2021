@@ -10,31 +10,20 @@ class Jadwal extends Model
     use HasFactory;
     protected $fillable = ['hari_id',  'matkul_id', 'kelas_id', 'dosen_id', 'jam_mulai', 'jam_selesai', 'ruang_id'];
 
+    public function hari(){
+        return $this->belongsTo(Hari::class);
+    }
+    public function dosen(){
+        return $this->belongsTo(Dosen::class);
+    }
+    public function kelas(){
+        return $this->belongsTo(Kelas::class);
+    }
+    public function ruang(){
+        return $this->belongsTo(Ruang::class);
+    }
     public function matkul(){
         return $this->belongsTo(MataKuliah::class);
     }
     
-    public function Hari()
-    {
-        return $this->belongsTo('App\Models\Hari')->withDefault();
-    }
-
-    public function MataKuliah()
-    {
-        return $this->belongsTo('App\Models\MataKuliah')->withDefault();
-    }
-    public function Kelas()
-    {
-        return $this->belongsTo('App\Models\Kelas')->withDefault();
-    }
-
-    public function Dosen()
-    {
-        return $this->belongsTo('App\Models\Dosen')->withDefault();
-    }
-
-    public function Ruang()
-    {
-        return $this->belongsTo('App\Models\Ruang')->withDefault();
-    }
 }

@@ -10,7 +10,7 @@
             <h3 class="card-title">
             <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".tambah-kelas">
                   Tambah Data 
-              </button>
+              </button> 
             </h3>
         </div>
         

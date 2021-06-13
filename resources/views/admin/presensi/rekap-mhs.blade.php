@@ -1,7 +1,7 @@
 @extends('template.head')
-@section('title', 'SIAKAD - Rekap Presensi')
-@section('heading', 'Rekap Presensi')
-@section('page', 'Rekap Presensi')
+@section('title', 'SIAKAD - List Presensi Masuk')
+@section('heading', 'List Presensi Masuk')
+@section('page', 'List Presensi Masuk')
 
 
 @section('content')
@@ -10,7 +10,7 @@
     <div class="card center">
         <div class="card-header">
             <h3 class="card-title">
-                Rekap Presensi                
+                List Presensi Masuk                
             </h3>
         </div>
             <!-- /.card-header -->
@@ -24,32 +24,29 @@
                 <input type="date" id="tglakhir" name="tglakhir" class="form-control">
             </div>
             <div class="form-group">
-               <a href="" onclick="this.href='/filter-data-dosen/'+document.getElementById('tglawal').value +
+               <a href="" onclick="this.href='/rekap-data-mhs/'+document.getElementById('tglawal').value +
                '/' + document.getElementById('tglakhir').value " class="btn btn-primary col-md-12">
                Lihat <i class="fas fa-print"></i>
                </a>
             </div>
 
             <div class="form-group">
-            <table class="table table-bordered">
+              <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>Nama</th>
                         <th>Tanggal</th>
                         <th>Masuk</th>
-                        <th>Keluar</th>
-                        <th>Jam Kerja</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($presensidosen as $item )
+                    @foreach ($presensimhs as $item )
                     <tr>
                         <th>{{ $item->user->name }}</th>
-                        <th>{{ $item->tgl }}</th> 
+                        <th>{{ $item->tgl }}</th>
                         <th>{{ $item->jammasuk }}</th>
-                        <th>{{ $item->jamkeluar }}</th>
-                        <th>{{ $item->jamkerja }}</th>
-                    @endforeach        
+                    @endforeach
+                        
                     </tr>
                 </tbody>
                </table>
@@ -65,4 +62,5 @@
 
  
 @endsection
+
 

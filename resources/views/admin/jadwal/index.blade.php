@@ -21,22 +21,34 @@
                 <tr>
                     <th>No.</th>
                     <th>Nama Mata Kuliah</th>
-                    <th>Nama Kelas</th>
+                    <th>Kelas</th>
+                    <th>Nama Dosen</th>
+                    <th>Hari</th>
+                    <th>Ruang</th>
                     <th>Jam Mulai</th>
                     <th>Jam Selesai</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($kelas as $data)
+                @foreach ($jadwal as $data)
                   <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $data->matkul_id }}</td>
-                    <td>{{ $data->nama_kelas }}</td>
+                    <td>{{ $data->matkul->nama_matkul }}</td>
+                    <td>{{ $data->kelas->nama_kelas }}</td>
+                    <td>{{ $data->dosen->nama }}</td>
+                    <td>{{ $data->hari->nama_hari }}</td>
+                    <td>{{ $data->ruang->nama_ruang }}</td>
                     <td>{{ $data->jam_mulai }}</td>
                     <td>{{ $data->jam_selesai }}</td>
                     <td>
-                      <a href="#" class="btn btn-info btn-sm"><i class="nav-icon fas fa-search-plus"></i> &nbsp; Ditails</a>
+                    <form action="{{ url('/jadwals/'. $data->id ) }}" method="post">
+                            @csrf
+                            @method('delete')
+                           
+                            <a href="{{ url('/jadwals/'. $data->id .'/edit') }}" class="btn btn-success btn-sm mt-2"><i class="nav-icon fas fa-edit"></i> &nbsp; Edit</a>
+                            <button class="btn btn-danger btn-sm mt-2"><i class="nav-icon fas fa-trash-alt"></i> &nbsp; Hapus</button>        
+                    </form>
                     </td>
                   </tr>
                 @endforeach
@@ -59,7 +71,7 @@
           </button>
       </div>
       <div class="modal-body">
-          <form action="#" method="post"> 
+          <form action="{{ url('/jadwals')}}" method="post"> 
             @csrf
             <div class="row">
               <div class="col-md-6">
@@ -78,6 +90,15 @@
                       <option value="">-- Pilih Kelas --</option>
                       @foreach ($kelas as $data)
                           <option value="{{ $data->id }}">{{ $data->nama_kelas }}</option>
+                      @endforeach
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="dosen_id">Dosen</label>
+                  <select id="dosen_id" name="dosen_id" class="form-control @error('dosen_id') is-invalid @enderror select2bs4">
+                      <option value="">-- Pilih Dosen --</option>
+                      @foreach ($dosen as $data)
+                          <option value="{{ $data->id }}">{{ $data->nama }}</option>
                       @endforeach
                   </select>
                 </div>

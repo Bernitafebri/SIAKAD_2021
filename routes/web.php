@@ -71,6 +71,9 @@ Route::group(['middleware' => ['auth','cekLevel:admin']], function () {
     // Jadwal
     Route::get('/jadwals', [JadwalController::class, 'index']);
     Route::post('/jadwals', [JadwalController::class, 'store']);
+    Route::get('/jadwals/{jadwal}/edit', [JadwalController::class, 'edit']);
+    Route::patch('/jadwals/{jadwal}', [JadwalController::class, 'update']);
+    Route::delete('/jadwals/{id}', [JadwalController::class, 'destroy']);
 
     // Kelas
     Route::get('/kelas', [KelasController::class, 'index']);
@@ -79,10 +82,16 @@ Route::group(['middleware' => ['auth','cekLevel:admin']], function () {
     Route::patch('/kelas/{kelas}', [KelasController::class, 'update']);
     Route::delete('/kelas/{id}', [KelasController::class, 'destroy']);
 
-
+    // Rekap Presensi
+    Route::get('rekap-data-mhs', [PresensiMhsController::class, 'halamanrekapAdmin'])->name('admin-data-mhs');
+    Route::get('rekap-data-mhs/{tglawal}/{tglakhir}', [PresensiMhsController::class, 'tampildataAdmin'])->name('admin-data-mhs-keseluruhan');
+    Route::get('rekap-data-dosen', [PresensiDosenController::class, 'halamanrekapAdmin'])->name('admin-data-dosen');
+    Route::get('rekap-data-dosen/{tglawal}/{tglakhir}', [PresensiDosenController::class, 'tampildataAdmin'])->name('admin-data-dosen-keseluruhan');
 
     // Users
     Route::get('/users', [UserController::class, 'index']);
+    Route::post('/users', [UserController::class, 'store'])->name('user.store');
+    Route::delete('/users/{id}', [UserController::class, 'destroy']);
 
 });
 
@@ -92,9 +101,10 @@ Route::group(['middleware' => ['auth','cekLevel:mahasiswa']], function () {
     // Presensi
     Route::get('/presensi-mhs', [PresensiMhsController::class, 'index']);
     Route::post('/presensi-mhs', [PresensiMhsController::class, 'store']);
-    Route::get('filter-data', [PresensiMhsController::class, 'halamanrekap'])->name('filter-data');
-    Route::get('filter-data/{tglawal}/{tglakhir}', [PresensiMhsController::class, 'tampildatakeseluruhan'])->name('filter-data-keseluruhan');
+    Route::get('filter-data-mhs', [PresensiMhsController::class, 'halamanrekap'])->name('filter-data-mhs');
+    Route::get('filter-data-mhs/{tglawal}/{tglakhir}', [PresensiMhsController::class, 'tampildatakeseluruhan'])->name('filter-data-mhs-keseluruhan');
 
+    Route::get('/jadwals-mhs', [JadwalController::class, 'jadwalMhs']);
 });
 
 
@@ -114,7 +124,8 @@ Route::group(['middleware' => ['auth','cekLevel:dosen']], function () {
     Route::post('/presensi-masuk-dosen', [PresensiDosenController::class, 'store']);
     Route::get('/presensi-keluar-dosen', [PresensiDosenController::class, 'keluar'])->name('presensi-keluar');
     Route::post('/presensi-keluar-dosen', [PresensiDosenController::class, 'presensipulang']);
-    Route::get('filter-data', [PresensiDosenController::class, 'halamanrekap'])->name('filter-data');
-    Route::get('filter-data/{tglawal}/{tglakhir}', [PresensiDosenController::class, 'tampildatakeseluruhan'])->name('filter-data-keseluruhan');
+    Route::get('filter-data-dosen', [PresensiDosenController::class, 'halamanrekap'])->name('filter-data-dosen');
+    Route::get('filter-data-dosen/{tglawal}/{tglakhir}', [PresensiDosenController::class, 'tampildatakeseluruhan'])->name('filter-data-dosen-keseluruhan');
 
+    Route::get('/jadwals-dosen', [JadwalController::class, 'jadwalDosen']);
 });

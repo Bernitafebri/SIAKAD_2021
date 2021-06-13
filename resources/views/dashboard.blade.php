@@ -9,8 +9,8 @@
     <div class="col-lg-4 col-6">
         <div class="small-box bg-info">
             <div class="inner">
-                <h3>0</h3>
-                <p>Jadwal</p>
+                <h3>Jadwal</h3>
+                <p>Kuliah</p>
             </div>
             <div class="icon">
                 <i class="fas fa-calendar-alt nav-icon"></i>
@@ -81,45 +81,6 @@
         </div>
     </div>
 
-    <div class="col-md-6">
-            <div class="card card-default">
-              <div class="card-header">
-                <h3 class="card-title">
-                  <i class="fas fa-bullhorn"></i>
-                  Callouts
-                </h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <div class="callout callout-danger">
-                  <h5>I am a danger callout!</h5>
-
-                  <p>There is a problem that we need to fix. A wonderful serenity has taken possession of my entire
-                    soul,
-                    like these sweet mornings of spring which I enjoy with my whole heart.</p>
-                </div>
-                <div class="callout callout-info">
-                  <h5>I am an info callout!</h5>
-
-                  <p>Follow the steps to continue to payment.</p>
-                </div>
-                <div class="callout callout-warning">
-                  <h5>I am a warning callout!</h5>
-
-                  <p>This is a yellow callout.</p>
-                </div>
-                <div class="callout callout-success">
-                  <h5>I am a success callout!</h5>
-
-                  <p>This is a green callout.</p>
-                </div>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-
     @endif
 
 
@@ -127,49 +88,13 @@
     <div class="col-lg-4 col-6">
         <div class="small-box bg-info">
             <div class="inner">
-                <h3>0</h3>
-                <p>Jadwal</p>
+                <h1>Jadwal</h1>
+                <p></p>
             </div>
             <div class="icon">
                 <i class="fas fa-calendar-alt nav-icon"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-        </div>
-    </div>
-    <!-- <div class="col-lg-4 col-6">
-        <div class="small-box bg-primary">
-            <div class="inner">
-                <h3>0</h3>
-                <p>Mahasiswa</p>
-            </div>
-            <div class="icon">
-                <i class="fas fa-id-card nav-icon"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-        </div>
-    </div> -->
-    <div class="col-lg-4 col-6">
-        <div class="small-box bg-primary">
-            <div class="inner">
-                <h3>0</h3>
-                <p>Nilai</p>
-            </div>
-            <div class="icon">
-                <i class="fas fa-home nav-icon"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-        </div>
-    </div>
-    <div class="col-lg-4 col-6">
-        <div class="small-box bg-success">
-            <div class="inner">
-                <h3>0</h3>
-                <p>Absensi</p>
-            </div>
-            <div class="icon">
-                <i class="fas fa-calendar-check nav-icon"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{ url('/jadwals-dosen') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
     @endif
@@ -185,7 +110,7 @@
             <div class="icon">
                 <i class="fas fa-calendar-alt nav-icon"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{ url('/jadwals-mhs') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <div class="col-lg-4 col-6">

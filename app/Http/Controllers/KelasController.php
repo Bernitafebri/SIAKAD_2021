@@ -33,7 +33,7 @@ class KelasController extends Controller
             ]
         );
 
-        return redirect()->back()->with('toast_success', 'Data kelas berhasil diperbarui!');
+        return redirect()->back()->with('success', 'Data kelas berhasil diperbarui!');
     }
 
     public function edit(Kelas $kelas)

@@ -55,12 +55,12 @@
         </div>
       </form>
 
-      <p class="mb-1">
+      <!-- <p class="mb-1">
         <a href="{{ url('/forgot') }}">I forgot my password</a>
       </p>
       <p class="mb-0">
         <a href="{{ url('/registrasi') }}" class="text-center">Register</a>
-      </p>
+      </p> -->
     </div>
     <!-- /.card-body -->
   </div>

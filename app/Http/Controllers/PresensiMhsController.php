@@ -21,6 +21,12 @@ class PresensiMhsController extends Controller
         return view('mahasiswa.rekapPresensi', compact('presensimhs'));
     }
 
+    public function tampildataAdmin($tglawal, $tglakhir)
+    {
+        $presensimhs = PresensiMhs::with('user')->whereBetween('tgl',[$tglawal, $tglakhir])->orderBy('tgl', 'asc')->get();
+        return view('admin.presensi.rekap-mhs', compact('presensimhs'));
+    }
+
     
     public function store(Request $request)
     {
@@ -34,7 +40,7 @@ class PresensiMhsController extends Controller
             ['tgl','=',$tanggal],
         ])->first();
         if($presensimhs){
-            return redirect('/presensi-mhs')->with('toast_success', 'Sudah Absen!');
+            return redirect('/presensi-mhs')->with('success', 'Sudah Absen!');
         }else{
             PresensiMhs::create([
                 'user_id' => auth()->user()->id,
@@ -49,6 +55,11 @@ class PresensiMhsController extends Controller
     public function halamanrekap()
     {
         return view('mahasiswa.HalamanrekapPresensi');
+    }
+
+    public function halamanrekapAdmin()
+    {
+        return view('admin.presensi.Hal-rekap-mhs');
     }
 
    

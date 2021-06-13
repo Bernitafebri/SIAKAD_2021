@@ -40,7 +40,7 @@ class MataKuliahController extends Controller
             'semester' => $request->semester,
         ]);
 
-        return redirect('/matkul')->with('toast_success', 'Data berhasil ditambahkan!');
+        return redirect('/matkul')->with('success', 'Data berhasil ditambahkan!');
     }
 
     public function edit(MataKuliah $matkul)

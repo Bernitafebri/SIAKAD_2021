@@ -51,7 +51,7 @@ class DosenController extends Controller
             'prodi' => $request->prodi, 
         ]);
 
-        return redirect('/data-dosen')->with('toast_success', 'Data berhasil ditambahkan!');
+        return redirect('/data-dosen')->with('success', 'Data berhasil ditambahkan!');
     }
 
     

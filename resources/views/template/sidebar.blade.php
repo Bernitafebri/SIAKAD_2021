@@ -165,7 +165,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('filter-data') }}" class="nav-link">
+                <a href="{{ route('filter-data-dosen') }}" class="nav-link">
                   <i class="fas fa-user nav-icon"></i>
                     <p>Rekap Presensi Dosen</p>
                 </a>
@@ -173,15 +173,15 @@
               @endif
               @if (auth()->user()->level=="admin")
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('admin-data-dosen') }}" class="nav-link">
                   <i class="fas fa-users nav-icon"></i>
-                    <p>All Dosen</p>
+                    <p>Rekap Presensi Dosen</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('admin-data-mhs') }}" class="nav-link">
                   <i class="fas fa-users nav-icon"></i>
-                    <p>All Mahasiswa</p>
+                    <p>Rekap Presensi Mahasiswa</p>
                 </a>
               </li>
               @endif
@@ -195,7 +195,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('filter-data') }}" class="nav-link">
+                <a href="{{ route('filter-data-mhs') }}" class="nav-link">
                   <i class="fas fa-user nav-icon"></i>
                     <p>Rekap Presensi Mahasiswa</p>
                 </a>
@@ -204,7 +204,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ url('/jadwals') }}" class="nav-link">
             <i class="nav-icon fas fa-calendar-alt"></i>
               <p>
                   Jadwal

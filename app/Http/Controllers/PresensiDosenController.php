@@ -41,7 +41,7 @@ class PresensiDosenController extends Controller
                 'jammasuk' => $localtime,
             ]);
         }
-        return redirect('/presensi-masuk-dosen');
+        return redirect('/presensi-masuk-dosen')->with('success', 'Berhasil Absen!');
     }
 
     public function presensipulang()
@@ -63,7 +63,7 @@ class PresensiDosenController extends Controller
 
         if($presensidosen->jamkeluar == ""){
             $presensidosen->update($dt);
-            return redirect('/presensi-keluar-dosen')->with('toast_success', 'Berhasil Absen!');
+            return redirect('/presensi-keluar-dosen')->with('success', 'Berhasil Absen!');
         }else{
             return redirect('/presensi-keluar-dosen')->with('toast_success', 'Sudah Absen!');
         }
@@ -78,6 +78,17 @@ class PresensiDosenController extends Controller
     {
         $presensidosen = PresensiDosen::with('user')->whereBetween('tgl',[$tglawal, $tglakhir])->orderBy('tgl', 'asc')->get();
         return view('dosen.presensi.rekapPresensi', compact('presensidosen'));
+    }
+
+    public function halamanrekapAdmin()
+    {
+        return view('admin.presensi.Hal-rekap-dosen');
+    }
+
+    public function tampildataAdmin($tglawal, $tglakhir)
+    {
+        $presensidosen = PresensiDosen::with('user')->whereBetween('tgl',[$tglawal, $tglakhir])->orderBy('tgl', 'asc')->get();
+        return view('admin.presensi.rekap-dosen', compact('presensidosen'));
     }
     
 }
