@@ -49,12 +49,13 @@
         <!-- /.card-body -->
 
         <div class="card-footer justify-content-between">
-            <a href="{{ url('/data-dosen') }}" class="btn btn-default">Cancel</a>
+            <a href="{{ url('/data-mhs') }}" class="btn btn-default">Cancel</a>
             <button type="submit" class="btn btn-primary float-right">Submit</button>
         </div>
     </form>
 </div>
 <!-- /.card -->
+</div>
 
 
 

@@ -103,7 +103,7 @@
            @if (auth()->user()->level=="dosen")
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ url('/data-mhs') }}" class="nav-link">
             <i class="nav-icon fas fa-users"></i>
               <p>
                   Data Mahasiswa
@@ -153,9 +153,21 @@
             <ul class="nav nav-treeview ml-4">
               @if (auth()->user()->level=="dosen")
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-users nav-icon"></i>
-                    <p>Per Dosen</p>
+                <a href="{{ url('/presensi-masuk-dosen')}}" class="nav-link">
+                  <i class="fas fa-sign-in-alt nav-icon"></i>
+                    <p>Masuk</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('/presensi-keluar-dosen')}}" class="nav-link">
+                  <i class="fas fa-sign-out-alt nav-icon"></i>
+                    <p>Keluar</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('filter-data') }}" class="nav-link">
+                  <i class="fas fa-user nav-icon"></i>
+                    <p>Rekap Presensi Dosen</p>
                 </a>
               </li>
               @endif
@@ -174,14 +186,6 @@
               </li>
               @endif
 
-              @if (auth()->user()->level=="dosen")
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-users nav-icon"></i>
-                    <p>All Mahasiswa</p>
-                </a>
-              </li>
-              @endif
 
               @if (auth()->user()->level=="mahasiswa")
               <li class="nav-item">

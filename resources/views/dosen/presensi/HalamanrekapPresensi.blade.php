@@ -1,7 +1,7 @@
 @extends('template.head')
-@section('title', 'SIAKAD - List Presensi Masuk')
-@section('heading', 'List Presensi Masuk')
-@section('page', 'List Presensi Masuk')
+@section('title', 'SIAKAD - Rekap Presensi')
+@section('heading', 'Rekap Presensi')
+@section('page', 'Rekap Presensi')
 
 
 @section('content')
@@ -10,7 +10,7 @@
     <div class="card center">
         <div class="card-header">
             <h3 class="card-title">
-                List Presensi Masuk                
+                Rekap Presensi                
             </h3>
         </div>
             <!-- /.card-header -->
@@ -30,33 +30,10 @@
                </a>
             </div>
 
-            <div class="form-group">
-              <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Nama</th>
-                        <th>Tanggal</th>
-                        <th>Masuk</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($presensimhs as $item )
-                    <tr>
-                        <th>{{ $item->user->name }}</th>
-                        <th>{{ $item->tgl }}</th>
-                        <th>{{ $item->jammasuk }}</th>
-                    @endforeach
-                        
-                    </tr>
-                </tbody>
-               </table>
-            </div>
         </div ><!-- /.card-body -->
-
         <div class="card-footer clearfix">
             <a href="{{ url('/dashboard') }}" >Dasboard</a>
         </div><!-- /.card footer-->
-
     </div>     <!-- /.card -->
 </div>
 

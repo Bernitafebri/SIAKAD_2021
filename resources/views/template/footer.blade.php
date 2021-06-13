@@ -1,7 +1,7 @@
 <!-- Main Footer -->
   <footer class="main-footer">
     <!-- Default to the left -->
-    <strong>Copyright &copy; <script>document.write(new Date().getFullYear());</script> &diams; <a href="https://www.undip.ac.id/">UNDIP</a>.</strong> 
+    <strong>Copyright &copy; <script>document.write(new Date().getFullYear());</script> &diams; <a href="https://www.undip.ac.id/">SIAKAD</a>.</strong> 
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
       Anything you want

@@ -59,7 +59,7 @@
                     <th>Prodi</th>
                     <th>Action</th>
                   </tr>
-                </tfoot>
+                </tfoot> 
               </table>
             </div ><!-- /.card-body -->
 

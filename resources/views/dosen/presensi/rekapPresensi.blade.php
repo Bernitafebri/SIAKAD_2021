@@ -1,7 +1,7 @@
 @extends('template.head')
-@section('title', 'SIAKAD - List Presensi Masuk')
-@section('heading', 'List Presensi Masuk')
-@section('page', 'List Presensi Masuk')
+@section('title', 'SIAKAD - Rekap Presensi')
+@section('heading', 'Rekap Presensi')
+@section('page', 'Rekap Presensi')
 
 
 @section('content')
@@ -10,7 +10,7 @@
     <div class="card center">
         <div class="card-header">
             <h3 class="card-title">
-                List Presensi Masuk                
+                Rekap Presensi                
             </h3>
         </div>
             <!-- /.card-header -->
@@ -31,22 +31,25 @@
             </div>
 
             <div class="form-group">
-              <table class="table table-bordered">
+            <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>Nama</th>
                         <th>Tanggal</th>
                         <th>Masuk</th>
+                        <th>Keluar</th>
+                        <th>Jam Kerja</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($presensimhs as $item )
+                    @foreach ($presensidosen as $item )
                     <tr>
                         <th>{{ $item->user->name }}</th>
                         <th>{{ $item->tgl }}</th>
                         <th>{{ $item->jammasuk }}</th>
-                    @endforeach
-                        
+                        <th>{{ $item->jamkeluar }}</th>
+                        <th>{{ $item->jamkerja }}</th>
+                    @endforeach        
                     </tr>
                 </tbody>
                </table>
@@ -62,10 +65,4 @@
 
  
 @endsection
-
-@push('scripts')
-
-
-
-@endpush
 

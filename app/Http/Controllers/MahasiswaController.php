@@ -64,7 +64,7 @@ class MahasiswaController extends Controller
         $request->validate(
             [
                 'nama' => 'required',
-                'nip' => 'required',
+                'nim' => 'required',
                 'gender' => 'required',
                 'address' => 'required',
                 'noHP' => 'required',

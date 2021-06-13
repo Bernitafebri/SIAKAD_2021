@@ -10,6 +10,7 @@ use App\Http\Controllers\RuangController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\PresensiMhsController;
+use App\Http\Controllers\PresensiDosenController;
 use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
@@ -93,5 +94,27 @@ Route::group(['middleware' => ['auth','cekLevel:mahasiswa']], function () {
     Route::post('/presensi-mhs', [PresensiMhsController::class, 'store']);
     Route::get('filter-data', [PresensiMhsController::class, 'halamanrekap'])->name('filter-data');
     Route::get('filter-data/{tglawal}/{tglakhir}', [PresensiMhsController::class, 'tampildatakeseluruhan'])->name('filter-data-keseluruhan');
+
+});
+
+
+// Dosen
+Route::group(['middleware' => ['auth','cekLevel:dosen']], function () {
+
+    // Mahasiswa
+    Route::get('/data-mhs', [MahasiswaController::class, 'index']);
+    Route::get('/data-mhs/tambah', [MahasiswaController::class, 'create']);
+    Route::post('/data-mhs', [MahasiswaController::class, 'store']);
+    Route::get('/data-mhs/{mhs}/edit', [MahasiswaController::class, 'edit']);
+    Route::patch('/data-mhs/{mhs}', [MahasiswaController::class, 'update']);
+    Route::delete('/data-mhs/{id}', [MahasiswaController::class, 'destroy']);
+
+    // Presensi
+    Route::get('/presensi-masuk-dosen', [PresensiDosenController::class, 'index']);
+    Route::post('/presensi-masuk-dosen', [PresensiDosenController::class, 'store']);
+    Route::get('/presensi-keluar-dosen', [PresensiDosenController::class, 'keluar'])->name('presensi-keluar');
+    Route::post('/presensi-keluar-dosen', [PresensiDosenController::class, 'presensipulang']);
+    Route::get('filter-data', [PresensiDosenController::class, 'halamanrekap'])->name('filter-data');
+    Route::get('filter-data/{tglawal}/{tglakhir}', [PresensiDosenController::class, 'tampildatakeseluruhan'])->name('filter-data-keseluruhan');
 
 });
