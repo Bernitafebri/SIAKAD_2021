@@ -74,6 +74,10 @@ Route::group(['middleware' => ['auth','cekLevel:admin']], function () {
     // Kelas
     Route::get('/kelas', [KelasController::class, 'index']);
     Route::post('/kelas', [KelasController::class, 'store']);
+    Route::get('/kelas/{kelas}/edit', [KelasController::class, 'edit']);
+    Route::patch('/kelas/{kelas}', [KelasController::class, 'update']);
+    Route::delete('/kelas/{id}', [KelasController::class, 'destroy']);
+
 
 
     // Users

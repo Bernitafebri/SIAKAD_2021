@@ -31,7 +31,9 @@
             </div>
 
         </div ><!-- /.card-body -->
-
+        <div class="card-footer clearfix">
+            <a href="{{ url('/dashboard') }}" >Dasboard</a>
+        </div><!-- /.card footer-->
     </div>     <!-- /.card -->
 </div>
 

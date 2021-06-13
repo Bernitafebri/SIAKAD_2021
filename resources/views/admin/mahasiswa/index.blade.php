@@ -30,7 +30,7 @@
                   @foreach ($mahasiswa as $mhs)
                   <tr>
                     <td>{{ $mhs->nama }}</td>
-                    <td>{{ $mhs->nip }}</td>
+                    <td>{{ $mhs->nim }}</td>
                     <td>{{ $mhs->gender }}</td>
                     <td>{{ $mhs->address }}</td>
                     <td>{{ $mhs->noHP }}</td>
@@ -51,7 +51,7 @@
                 <tfoot>
                   <tr>
                     <th>Nama</th>
-                    <th>NIP</th>
+                    <th>NIM</th>
                     <th>Jenis Kelamin</th>
                     <th>Alamat</th>
                     <th>No. HP</th>

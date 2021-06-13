@@ -173,9 +173,19 @@
                 </a>
               </li>
               @endif
-              @if (auth()->user()->level=="mahasiswa")
+
+              @if (auth()->user()->level=="dosen")
               <li class="nav-item">
                 <a href="#" class="nav-link">
+                  <i class="fas fa-users nav-icon"></i>
+                    <p>All Mahasiswa</p>
+                </a>
+              </li>
+              @endif
+
+              @if (auth()->user()->level=="mahasiswa")
+              <li class="nav-item">
+                <a href="{{ url('/presensi-mhs') }}" class="nav-link">
                   <i class="fas fa-user nav-icon"></i>
                     <p>Presensi Mahasiswa</p>
                 </a>
@@ -186,17 +196,18 @@
                     <p>Rekap Presensi Mahasiswa</p>
                 </a>
               </li>
-              @endif
-              @if (auth()->user()->level=="dosen")
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-users nav-icon"></i>
-                    <p>All Mahasiswa</p>
-                </a>
-              </li>
-              @endif
             </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-calendar-alt"></i>
+              <p>
+                  Jadwal
+              </p>
+            </a>
           </li>      
+          @endif
 
 
           

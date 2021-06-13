@@ -10,13 +10,10 @@ class Kelas extends Model
     use HasFactory;
     protected $fillable = ['matkul_id', 'nama_kelas', 'dosen_id'];
 
-    public function dosen()
-    {
-        return $this->belongsTo('App\Models\Dosen;')->withDefault();
+    public function matkul(){
+        return $this->belongsTo(MataKuliah::class);
     }
-    
-    public function matkul()
-    {
-        return $this->belongsTo('App\Models\MataKuliah;')->withDefault();
+    public function dosen(){
+        return $this->belongsTo(Dosen::class);
     }
 }

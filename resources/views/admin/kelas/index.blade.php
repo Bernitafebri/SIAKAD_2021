@@ -8,15 +8,15 @@
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">
-            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".tambah-jadwal">
+            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".tambah-kelas">
                   Tambah Data 
               </button>
             </h3>
         </div>
         
-        <!-- /.card-header -->
+        <!-- /.card-header TABEL KELAS-->
         <div class="card-body">
-          <table id="jadwal" class="table table-bordered table-striped table-hover">
+          <table id="kelas" class="table table-bordered table-striped table-hover">
             <thead>
                 <tr>
                     <th>No. </th>
@@ -30,11 +30,17 @@
                 @foreach ($kelas as $data)
                   <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $data->matkul_id }}</td>
+                    <td>{{ $data->matkul->nama_matkul }}</td>
                     <td>{{ $data->nama_kelas }}</td>
-                    <td>{{ $data->dosen_id }}  </td>
-                    <td>
-                      <a href="#" class="btn btn-info btn-sm"><i class="nav-icon fas fa-search-plus"></i> &nbsp; Details</a>
+                    <td>{{ $data->dosen->nama }}  </td>
+                    <td>                   
+                    <form action="{{ url('/kelas/'. $data->id ) }}" method="post">
+                            @csrf
+                            @method('delete')
+                           
+                            <a href="{{ url('/kelas/'. $data->id .'/edit') }}" class="btn btn-success btn-sm mt-2"><i class="nav-icon fas fa-edit"></i> &nbsp; Edit</a>
+                            <button class="btn btn-danger btn-sm mt-2"><i class="nav-icon fas fa-trash-alt"></i> &nbsp; Hapus</button>        
+                        </form>
                     </td>
                   </tr>
                 @endforeach
@@ -42,16 +48,19 @@
           </table>
         </div>
         <!-- /.card-body -->
+        <div class="card-footer clearfix">
+          <a href="{{ url('/dashboard') }}" >Dasboard</a>
+        </div><!-- /.card footer-->
     </div>
     <!-- /.card -->
 </div>
 
-<!-- Extra large modal -->
-<div class="modal fade bd-example-modal-lg tambah-jadwal" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+<!-- Extra large modal UNTUK TAMBAH KELAS-->
+<div class="modal fade bd-example-modal-lg tambah-kelas" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
       <div class="modal-header">
-          <h4 class="modal-title">Tambah Data Jadwal</h4>
+          <h4 class="modal-title">Tambah Data Kelas</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -60,7 +69,7 @@
           <form action="{{ url('/kelas') }}" method="post"> 
             @csrf
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-12">
                 <div class="form-group">
                   <label for="matkul_id">Mata Kuliah</label>
                   <select id="matkul_id" name="matkul_id" class="form-control @error('matkul_id') is-invalid @enderror select2bs4">
@@ -93,7 +102,7 @@
       </div>
       </div>
     </div>
-  </div>
+</div>
 
  
 @endsection
@@ -107,7 +116,7 @@
 <!-- Page specific script -->
 <script>
   $(function () {
-    $('#jadwal').DataTable({
+    $('#kelas').DataTable({
       "paging": true,
       "lengthChange": true,
       "searching": true,
@@ -119,11 +128,7 @@
   });
 </script>
 
-<script>
-  $("#jam_mulai,#jam_selesai").timepicker({
-    timeFormat: 'HH:mm'
-    });
-</script>
+
 
 
 

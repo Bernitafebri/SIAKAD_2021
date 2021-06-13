@@ -34,7 +34,7 @@ class PresensiMhsController extends Controller
             ['tgl','=',$tanggal],
         ])->first();
         if($presensimhs){
-            dd("sudah ada");
+            return redirect('/presensi-mhs')->with('toast_success', 'Sudah Absen!');
         }else{
             PresensiMhs::create([
                 'user_id' => auth()->user()->id,
@@ -55,6 +55,6 @@ class PresensiMhsController extends Controller
     
     public function destroy($id)
     {
-        //
+        
     }
 }
