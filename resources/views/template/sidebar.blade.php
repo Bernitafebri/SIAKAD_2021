@@ -68,36 +68,6 @@
               </li>
             </ul>
           </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-file-signature"></i>
-              <p>
-                  Nilai
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview ml-4">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-file-alt nav-icon"></i>
-                    <p>Nilai Harian</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-file-alt nav-icon"></i>
-                    <p>Nilai UTS</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-file-alt nav-icon"></i>
-                    <p>Nilai UAS</p>
-                </a>
-              </li>
-            </ul>
-          </li>
           @endif
 
            @if (auth()->user()->level=="dosen")
@@ -111,35 +81,7 @@
             </a>
           </li>
 
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-file-signature"></i>
-              <p>
-                  Nilai
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview ml-4">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-file-alt nav-icon"></i>
-                    <p>Nilai Harian</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-file-alt nav-icon"></i>
-                    <p>Nilai UTS</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-file-alt nav-icon"></i>
-                    <p>Nilai UAS</p>
-                </a>
-              </li>
-            </ul>
-          </li>
+          
           @endif    
 
           <li class="nav-item">

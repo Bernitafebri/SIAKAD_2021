@@ -16,7 +16,6 @@
               <i class="nav-icon fas fa-user-circle"></i> &nbsp; {{ Auth::user()->name }}
             </a>
           <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-            <a class="dropdown-item" href="#"><i class="nav-icon fas fa-user"></i> &nbsp; My Profile</a>
             <a class="dropdown-item" href="{{ route('logout') }}" ><i class="nav-icon fas fa-sign-out-alt"></i> &nbsp; Log Out</a>
           </div>
         </div>
