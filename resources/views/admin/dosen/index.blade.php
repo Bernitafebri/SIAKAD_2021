@@ -52,6 +52,9 @@
                   <tr>
                     <th>Nama</th>
                     <th>NIP</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Alamat</th>
+                    <th>No. HP</th>
                     <th>Pengampu Matkul</th>
                     <th>Prodi</th>
                     <th>Action</th>
